@@ -21,7 +21,7 @@ def nyc_pigeon_organizer(data)
   # write your code here!
   new_data = {}
   data.each {|quality, value|
-    quality.each {|quality_value, namearray|
+    data[quality.to_sym].each {|quality_value, namearray|
       namearray.each {|name|
         new_data[name] ||= {}
         (new_data[name][quality.to_sym] ||= []).push(quality_value.to_s)
